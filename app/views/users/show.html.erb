@@ -1,0 +1,6 @@
+<h1><%= @user.first_name %>'s Placeholder</h1>
+
+
+<% @user.boards.each do |board| %>
+  <%= board.title %>
+  <% end %>
