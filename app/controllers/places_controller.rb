@@ -9,7 +9,9 @@ class PlacesController < ApplicationController
 
   def create
     place = Place.create place_params
-    redirect_to place
+    board = Board.find params[:place][:board_id]
+    board.places << place
+    redirect_to board
   end
 
   def edit
@@ -25,6 +27,14 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find params[:id]
   end
+
+  def destroy
+    place = Place.find params[:id]
+    place.destroy
+    redirect_to places_path
+  end
+
+  private
 
   def place_params
     params.require(:place).permit(:name, :country)

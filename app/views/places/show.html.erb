@@ -9,10 +9,6 @@
 
   </ul>
 
-<div class="controls">
-  <%= link_to "Edit Place", edit_place_path(@place) %>
-
-</div>
 
   <% @place.boards.each do |board| %>
     <%= link_to board.title, board %>
@@ -22,3 +18,8 @@
     <%= link_to image_tag(upload.image), upload %>
     <%= link_to upload.information, upload %>
     <% end %>
+
+<div class="controls">
+  <%= link_to "Edit Place", edit_place_path(@place) %>
+  <%= link_to "Delete Place", @place, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

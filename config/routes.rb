@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:new, :create, :update, :index, :show ]
 
-  resources :boards, :only => [:index, :show, :new, :create, :edit, :update]
+  resources :boards, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
   get '/myboards' => 'boards#my_boards', :as => 'my_boards'
 
   resources :places, :only => [:index, :show, :edit, :update, :new, :create]

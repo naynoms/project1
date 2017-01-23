@@ -8,11 +8,6 @@
 
   </ul>
 
-<div class="controls">
-  <%= link_to "Edit Upload", edit_upload_path(@upload) %>
-
-</div>
-
   <% @upload.board.each do |board| %>
     <%= link_to board.title, board %>
     <% end %>
@@ -20,3 +15,9 @@
     <% @upload.place.each do |place| %>
     <%= link_to place.name, place %>
     <% end %>
+
+<div class="controls">
+  <%= link_to "Edit Upload", edit_upload_path(@upload) %>
+  <%= link_to "Delete Upload", @upload, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+
+</div>

@@ -1,5 +1,13 @@
 <h1><%= @board.title %></h1>
 
+<% if @current_user.present? %>
+  <% if @current_user.boards.include?(@board) %>
+    <%= render :partial => 'places/form' %>
+    <% if @board.places.any? %>
+      <%= render :partial => 'uploads/form' %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <p>
   <% @board.places.each do |place| %>
@@ -23,4 +31,6 @@
 
 <div class="controls">
   <%= link_to "Edit Board", edit_board_path(@board) %>
+  <%= link_to "Delete Board", @board, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+
 </div>
