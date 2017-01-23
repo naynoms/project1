@@ -1,4 +1,24 @@
 <h1>Edit Profile</h1>
 
 
-<p>coming soon</p>
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+<%= f.label :first_name %>
+<%= f.email_field :first_name, :required => true %>
+
+<%= f.label :second_name %>
+<%= f.email_field :second_name, :required => true %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true %>
+
+  <%= f.submit %>
+<% end %>

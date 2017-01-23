@@ -2,5 +2,5 @@
 
 
 <% @user.boards.each do |board| %>
-  <%= board.title %>
+  <%= link_to board.title, board  %>
   <% end %>

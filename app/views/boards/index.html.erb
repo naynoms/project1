@@ -1,0 +1,5 @@
+<h1>Boards#index</h1>
+
+<% @boards.each do |board| %>
+  <p><%= link_to board.title, board %></p>
+<% end %>

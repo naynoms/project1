@@ -1,0 +1,26 @@
+<h1><%= @board.title %></h1>
+
+
+<p>
+  <% @board.places.each do |place| %>
+    <ul>
+      <%= place.name %>
+      <%= place.country %>
+
+    </ul>
+  <% end %>
+
+</p>
+
+<div>
+  <% @board.uploads.each do |upload| %>
+    <ul>
+      <img src="<%= upload.image %>" >
+      <%= upload.information %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="controls">
+  <%= link_to "Edit Board", edit_board_path(@board) %>
+</div>

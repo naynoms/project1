@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'thor', '0.19.1'
+gem 'bootstrap-sass'
+
 
 gem 'rails_12factor'
 

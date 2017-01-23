@@ -1,0 +1,24 @@
+
+<h1><%= @place.name %></h1>
+
+
+  <ul>
+    <li><%= @place.name %></li>
+
+    <li><%= @place.country %></li>
+
+  </ul>
+
+<div class="controls">
+  <%= link_to "Edit Place", edit_place_path(@place) %>
+
+</div>
+
+  <% @place.boards.each do |board| %>
+    <%= link_to board.title, board %>
+    <% end %>
+
+    <%= @place.uploads.each do |upload| %>
+    <%= link_to image_tag(upload.image), upload %>
+    <%= link_to upload.information, upload %>
+    <% end %>

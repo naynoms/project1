@@ -8,6 +8,7 @@
 #  board_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  place_id    :integer
 #
 
 require 'test_helper'

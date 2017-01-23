@@ -1,4 +1,7 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Users Index</h1>
 
 <p>will be for admin use havent added admin yet!</p>
+
+<% @users.each do |user| %>
+  <p><%= user.email %></p>
+<% end %>

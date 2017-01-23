@@ -1,0 +1,15 @@
+
+
+
+<%= form_for @upload do |f| %>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.url_field :image, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :information %>
+    <%= f.text_field :information, :class => 'form-control' %>
+  </div>
+
+  <%= f.submit :class => 'btn btn-default' %>
+  <% end %>

@@ -12,7 +12,15 @@
       <%= link_to "Home", root_path %>
       <% if @current_user.present? %>
         <%= link_to "Edit profile", users_edit_path %>
+        <%= link_to "Your Boards", my_boards_path %>
+        <%= link_to "Your wish list", @current_user %>
+        <%= link_to "New Board", new_board_path %>
+        <%= link_to "All Boards", boards_path %>
         <%= link_to "Logout #{@current_user.email}", login_path, :method => 'delete' %>
+        <%= link_to "All Places", places_path %>
+        <%= link_to "Add a Place", new_place_path %>
+        <%= link_to "All Uploads", uploads_path %>
+        <%= link_to "New Upload", new_upload_path %>
       <% else %>
         <%= link_to "New User", new_user_path %>
         <%= link_to "Sign In", login_path %>
