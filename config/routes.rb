@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
-  resources :users, :only => [:new, :create, :update, :index]
-
   get '/users/edit' => 'users#edit'
-  get '/users/:id' => 'users#show'
+
+
+  resources :users, :only => [:new, :create, :update, :index, :show ]
+
 
   get '/login' => 'session#new'
   post 'login' => 'session#create'
