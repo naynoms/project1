@@ -7,7 +7,7 @@ class SessionController < ApplicationController
   if user.present? && user.authenticate(params[:password])
     # flash[:welcome] = "Welcome #{user.email}"
     session[:user_id] = user.id
-    redirect_to user
+    redirect_to my_boards_path
   else
     flash[:error] = "Invalid email or password"
     redirect_to login_path
