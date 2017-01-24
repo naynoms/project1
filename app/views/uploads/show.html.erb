@@ -2,7 +2,7 @@
 
   <ul>
     <% unless @upload.image.nil? %>
-    <li><%= image_tag @upload.image %></li>
+    <li><%= cl_image_tag @upload.image %></li>
     <%end%>
     <li><%= @upload.information %></li>
 

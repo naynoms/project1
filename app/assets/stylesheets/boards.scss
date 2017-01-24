@@ -12,3 +12,17 @@
 div.new_place {
   display: none;
 }
+
+.board-index {
+  border: 5px solid black;
+  max-height: 300px;
+  min-height: 300px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 5px;
+}
+
+.tiny {
+  max-width: 65px;
+  max-height: 65px;
+}

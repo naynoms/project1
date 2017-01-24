@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   resources :boards, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
   get '/myboards' => 'boards#my_boards', :as => 'my_boards'
 
-  resources :places, :only => [:index, :show, :edit, :update, :new, :create]
+  resources :places, :only => [:index, :show, :edit, :update, :new, :create, :destroy]
 
-  resources :uploads, :only => [:index, :show, :edit, :update, :new, :create]
+  resources :uploads, :only => [:index, :show, :edit, :update, :new, :create, :destroy]
 
 ``
   get '/login' => 'session#new'
