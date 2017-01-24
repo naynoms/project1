@@ -6,4 +6,9 @@
 .board {
   border: 5px solid black;
   min-height: 600px;
+  padding: 1em;
+}
+
+div.new_place {
+  display: none;
 }

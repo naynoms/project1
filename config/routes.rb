@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :uploads, :only => [:index, :show, :edit, :update, :new, :create]
 
-
+``
   get '/login' => 'session#new'
   post 'login' => 'session#create'
   delete '/login' => 'session#destroy'

@@ -59,8 +59,6 @@
   <nav>
       <% if @current_user.present? %>
         <%= link_to "New Board", new_board_path %>
-        <%= link_to "Add a Place", new_place_path %>
-        <%= link_to "New Upload", new_upload_path %>
         <%= link_to "All Uploads", uploads_path %>
 
       <% else %>

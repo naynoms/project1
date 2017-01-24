@@ -8,7 +8,7 @@
   </div>
 
   <div class="col-md-4">
-    <% if @current_user.present? %>
+    <% if @current_user.present? && @board.persisted? %>
         <h2>New Place</h2>
         <%= render :partial => 'places/form' %>
         <hr>
