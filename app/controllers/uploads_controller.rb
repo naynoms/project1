@@ -9,7 +9,14 @@ class UploadsController < ApplicationController
 
   def create
     upload = Upload.create upload_params
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload( params[:file] )
+      upload.update :image => req["public_id"]
+    end
     redirect_to upload.board
+
+
   end
 
   def edit
@@ -18,6 +25,12 @@ class UploadsController < ApplicationController
 
   def update
     upload = Upload.find params[:id]
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload( params[:file] )
+      upload.update :image => req["public_id"]
+    end
+
     upload.update update_params
     redirect_to upload
   end

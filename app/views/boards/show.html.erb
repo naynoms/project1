@@ -2,8 +2,11 @@
 
 <% if @current_user.present? %>
   <% if @current_user.boards.include?(@board) %>
+    <h2>New Place</h2>
     <%= render :partial => 'places/form' %>
+    <hr>
     <% if @board.places.any? %>
+      <h2>New Upload</h2>
       <%= render :partial => 'uploads/form' %>
     <% end %>
   <% end %>
@@ -23,7 +26,7 @@
 <div>
   <% @board.uploads.each do |upload| %>
     <ul>
-      <img src="<%= upload.image %>" >
+      <%= cl_image_tag upload.image %>
       <%= upload.information %>
     </ul>
   <% end %>
