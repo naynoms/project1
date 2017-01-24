@@ -1,3 +1,23 @@
 <h1>Create New Board</h1>
 
-<%= render :partial => 'form' %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="board">
+      <%= render :partial => 'form' %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <% if @current_user.present? %>
+        <h2>New Place</h2>
+        <%= render :partial => 'places/form' %>
+        <hr>
+        <% if @board.places.any? %>
+          <h2>New Upload</h2>
+          <%= render :partial => 'uploads/form' %>
+        <% end %>
+    <% end %>
+
+  </div>
+
+</div>
