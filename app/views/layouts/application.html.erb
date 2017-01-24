@@ -27,8 +27,6 @@
  root_path %></li>
         <li class="active"><%= link_to 'Boards', boards_path %></li>
         <li class="active"><%= link_to 'Places', places_path %></li>
-        <li><%= link_to "New Board", new_board_path %></li>
-
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -43,6 +41,8 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Edit Profile", users_edit_path %></li>
             <li><%= link_to "My Boards", my_boards_path %></li>
+            <li><%= link_to "New Board", new_board_path %></li>
+
             <li role="separator" class="divider"></li>
             <li><%= link_to "Sign Out", login_path, :method => 'delete' %></li>
           </ul>
