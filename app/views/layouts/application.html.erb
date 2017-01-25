@@ -3,6 +3,9 @@
 <head>
   <title>Project1</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUatW5nPPT-Qu0IHkoVShbb7ioXbRIn9c&callback=initMap">
+  </script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
@@ -55,23 +58,24 @@
           <li>
              <div class="row">
                 <div class="col-md-12">
-                   <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                   <!--form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav"-->
+                   <%= form_tag login_path, :class => 'form', :id => 'login-nav' do %>
                       <div class="form-group">
                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                         <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
                       </div>
                       <div class="form-group">
                          <label class="sr-only" for="exampleInputPassword2">Password</label>
-                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                         <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
                                                <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                       </div>
                       <div class="form-group">
                          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                       </div>
-                   </form>
+                    <% end %>
                 </div>
                 <div class="bottom text-center">
-                  New here ? <a href="#"><b>Join Us</b></a>
+                  New here ? <%= link_to "Join Us", root_path %>
                 </div>
              </div>
           </li>

@@ -6,7 +6,7 @@
     <div class="board-index">
         <p class="board-title"><%= link_to board.title, board %></p>
         <div class="row">
-          <% board.uploads.each do |upload| %>
+          <% board.uploads.limit(12).each do |upload| %>
             <div class="col-md-3">
               <%= cl_image_tag upload.image, :class => 'img-responsive tiny' %>
             </div>
