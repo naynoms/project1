@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thor', '0.19.1'
 gem 'bootstrap-sass'
+gem 'geocoder'
 
 
 gem 'rails_12factor'
