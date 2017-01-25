@@ -1,25 +1,25 @@
 
-<h1><%= @place.name %></h1>
-
-
-  <ul>
-    <li><%= @place.name %></li>
-
-    <li><%= @place.country %></li>
-
-  </ul>
-
-
-  <% @place.boards.each do |board| %>
-    <%= link_to board.title, board %>
-    <% end %>
-
-    <%= @place.uploads.each do |upload| %>
-    <%= link_to cl_image_tag(upload.image), upload %>
-    <%= link_to upload.information, upload %>
-    <% end %>
+<h1><%= @place.location %></h1>
 
 <div class="controls">
   <%= link_to "Edit Place", edit_place_path(@place) %>
   <%= link_to "Delete Place", @place, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
 </div>
+
+
+    <div class="row">
+      <% @place.boards.each do |board| %>
+      <div class="col-md-4">
+        <div class="board-index">
+            <p class="board-title"><%= link_to board.title, board %></p>
+            <div class="row">
+              <% board.uploads.limit(12).each do |upload| %>
+                <div class="col-md-3">
+                  <%= cl_image_tag upload.image, :class => 'img-responsive tiny' %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
