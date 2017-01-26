@@ -8,11 +8,11 @@
 
 User.destroy_all
 
-u1= User.create :first_name => 'Nay', :second_name => 'Noms', :email => 'naynoms@ga.co', :password => 'chicken', :password_confirmation => 'chicken'
+u1= User.create :first_name => 'Nay', :second_name => 'Noms', :email => 'naynoms@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :admin => 'true'
 
-u2 = User.create :first_name => 'Donkey', :second_name => 'Bruce', :email => 'bigD@tlg.com.au', :password => 'chicken', :password_confirmation => 'chicken'
+u2 = User.create :first_name => 'Donkey', :second_name => 'Bruce', :email => 'bigD@tlg.com.au', :password => 'chicken', :password_confirmation => 'chicken', :admin => 'false'
 
-u3 = User.create  :first_name => 'Pam', :second_name => 'Pam', :email => 'pampam@ga.co', :password => 'chicken', :password_confirmation => 'chicken'
+u3 = User.create  :first_name => 'Pam', :second_name => 'Pam', :email => 'pampam@ga.co', :password => 'chicken', :password_confirmation => 'chicken', :admin => 'false'
 
 Board.destroy_all
 b1 = Board.create :title => 'Euro Summer 2017'
@@ -40,7 +40,7 @@ i7 = Upload.create  :image => 'http://www.fillmurray.com/209/201', :information 
 
 
 #ASSOCIATIONS!
-u1.boards << b1 << b3
+u1.boards << b1 
 u2.boards << b2
 u3.boards << b3
 
