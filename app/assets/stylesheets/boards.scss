@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+}
+
 
 .board {
   border: 5px solid black;
@@ -25,4 +28,7 @@ div.new_place {
 .tiny {
   max-width: 65px;
   max-height: 65px;
+}
+.placeholder {
+  visibility: hidden;
 }
