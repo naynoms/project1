@@ -3,4 +3,4 @@ $(document).ready(function () {
     $('div.new_place').toggle();
     $('#place_name').focus();
   });
-})
+});

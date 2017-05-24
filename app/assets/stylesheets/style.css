@@ -1,0 +1,6 @@
+.nav-links:hover {
+  background-color: skyblue;
+}
+.gallery {
+  display: inline-block;
+}

@@ -26,13 +26,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe,
+        <li class="nav-links"><%= link_to '<span class="glyphicon glyphicon-home"></span>'.html_safe,
  root_path %></li>
-        <li class="active"><%= link_to 'Boards', boards_path %></li>
-        <li class="active"><%= link_to 'Places', places_path %></li>
+        <li class="nav-links"><%= link_to 'Boards', boards_path %></li>
+        <li class="nav-links"><%= link_to 'Places', places_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown nav-links">
           <% if  @current_user.present? %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @current_user.first_name %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -52,7 +52,7 @@
           <% else %>
 
           <li><p class="navbar-text">Already have an account?</p></li>
-          <li class="dropdown">
+          <li class="dropdown nav-links">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
           <ul id="login-dp" class="dropdown-menu">
           <li>
