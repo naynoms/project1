@@ -1,27 +1,30 @@
-<h1>travel wish list</h1>
-<h3>Create | Search | Dream | Do</h3>
+<div class="homeContainer">
+  <h1>travel wish list</h1>
+  <h3>Create | Search | Dream | Do</h3>
 
-<div class="row">
-  <div class="col-md-8">
+  <div class="row">
+    <div class="col-md-8">
 
-    <h3>Going away? Or just daydreaming?</h3>
-    <h4>You've come to the right place!</h4>
+      <h3>Going away? Or just daydreaming?</h3>
+      <h4>You've come to the right place!</h4>
+    </div>
+    <div class="col-md-4">
+      <% if !  @current_user.present? %>
+        <%= render :partial => 'users/form' %>
+      <% else %>
+        <div class="home-gallery">
+          <!-- <img class="gallery"  src="http://fillmurray.com/160/160" alt="">
+          <img class="gallery" src="http://fillmurray.com/160/160" alt="">
+          <img class="gallery" src="http://fillmurray.com/160/160" alt="">
+          <img class="gallery" src="http://fillmurray.com/160/160" alt="">
+          <img class="gallery" src="http://fillmurray.com/160/160" alt="">
+          <img class="gallery" src="http://fillmurray.com/160/160" alt=""> -->
+          <!-- <img src="assets/worldIcons.jpg" alt=""> -->
+
+
+        </div>
+      <% end %>
+    </div>
+
   </div>
-  <div class="col-md-4">
-    <% if !  @current_user.present? %>
-      <%= render :partial => 'users/form' %>
-    <% else %>
-      <div class="home-gallery">
-        <img class="gallery"  src="http://fillmurray.com/160/160" alt="">
-        <img class="gallery" src="http://fillmurray.com/160/160" alt="">
-        <img class="gallery" src="http://fillmurray.com/160/160" alt="">
-        <img class="gallery" src="http://fillmurray.com/160/160" alt="">
-        <img class="gallery" src="http://fillmurray.com/160/160" alt="">
-        <img class="gallery" src="http://fillmurray.com/160/160" alt="">
-        
-
-      </div>
-    <% end %>
-  </div>
-
 </div>
