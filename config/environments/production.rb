@@ -25,8 +25,9 @@ Rails.application.configure do
 
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.serve_static_assets = true
+  config.serve_static_files = true
   config.assets.compile = true
+
   # RAILS_ENV=production rake assets:precompile
 
 
